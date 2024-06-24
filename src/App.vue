@@ -1,6 +1,7 @@
 <template>
   <Navigation></Navigation> 
   <router-view/>
+  <Footer></Footer>
 </template>
 
 <style>
@@ -16,11 +17,12 @@
 <script>
 
   import Navigation from "@/components/Navigation.vue"
+  import Footer from "@/components/Footer.vue"
 
   export default {
     name: "App",
     components: {
-      Navigation
+      Navigation, Footer
     }
   } 
 

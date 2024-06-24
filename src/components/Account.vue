@@ -1,16 +1,17 @@
 <template>
     <div class="dropdown">
-        <button class="dropbtn">{{ t("language") }} 
-        <i class="fa fa-caret-down"></i>
+        <button class="dropbtn">
+            <font-awesome-icon :icon="['far', 'circle-user']" />
+            {{ t("helloMessage") }}{{ username }}
         </button>
         <div class="dropdown-content">
-        <a @click="changeLanguage('rs')">
-            <img class="my-flag" src="../assets/SRB-flag.png">&ensp;
-            {{ t("serbianLang") }}
+        <a>
+            <i class='bx bxs-cart'></i>&nbsp;
+            {{ t('cart') }}
         </a>
-        <a @click="changeLanguage('en')">
-            <img class="my-flag" src="../assets/UK-flag.png">&ensp;
-            {{ t("englishLang") }}
+        <a @click="logout()">
+            <i class='bx bxs-log-out' ></i>&nbsp;
+            {{ t('logout') }}
         </a>
         </div>
     </div>
@@ -21,13 +22,8 @@
     $font-color: #f9ba81;
     $hover-color: #7c1412;
 
-    .my-flag {
-        width: 30px;
-        height: 30px;
-    }
-
     .dropdown {
-        float: left;
+        float: right;
         overflow: hidden;
     }
 
@@ -42,6 +38,7 @@
         margin: 0;
         height: 100%;
         font-weight: bold;
+        min-width: 160px;
     }
 
     .dropdown-content {
@@ -107,26 +104,31 @@
                 t,
             }
         },
-        name: "Languages",
+        name: "AccountButton",
+        props: {
+            username: String,
+        },
         methods: {
-            changeLanguage(lang) {
-                this.$i18n.locale = lang;
+            logout() {
+                localStorage.removeItem("logged-user");
+                this.$router.push("/login");
             }
         }
     }
+
 </script>
 
 <i18n>
-{
-    "en": {
-        "language": "Language",
-        "serbianLang": "Serbian",
-        "englishLang": "English",
-    },
-    "rs": {
-        "language": "Језик",
-        "serbianLang": "Српски",
-        "englishLang": "Енглески",
+    {
+        "en": {
+            "helloMessage": "Hi, ",
+            "cart": "My shopping cart",
+            "logout": "Logout"
+        },
+        "rs": {
+            "helloMessage": "Здраво, ",
+            "cart": "Моја корпа",
+            "logout": "Одјави се"
+        }
     }
-}
 </i18n>
