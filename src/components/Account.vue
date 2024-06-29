@@ -1,7 +1,7 @@
 <template>
     <div class="dropdown">
-        <button class="dropbtn">
-            <font-awesome-icon :icon="['far', 'circle-user']" />
+        <button class="dropbtn" id="account-dropdown-button">
+            <i class='bx bx-user-circle' id="font-icon"></i>&nbsp;
             {{ t("helloMessage") }}{{ username }}
         </button>
         <div class="dropdown-content">
@@ -22,6 +22,15 @@
     $font-color: #f9ba81;
     $hover-color: #7c1412;
 
+    #account-dropdown-button {
+        display: flex;
+        align-items: center;
+    }
+
+    #font-icon {
+        font-size: 30px;
+    }
+
     .dropdown {
         float: right;
         overflow: hidden;
@@ -38,14 +47,14 @@
         margin: 0;
         height: 100%;
         font-weight: bold;
-        min-width: 160px;
+        min-width: 180px;
     }
 
     .dropdown-content {
         display: none;
         position: absolute;
         background-color: #f67963;
-        min-width: 160px;
+        min-width: 180px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }

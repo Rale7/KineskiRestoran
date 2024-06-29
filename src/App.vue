@@ -5,8 +5,11 @@
 </template>
 
 <style>
+
+@import url('https://fonts.cdnfonts.com/css/chinese-food');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Chinese Food", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
