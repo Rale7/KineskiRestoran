@@ -1,33 +1,43 @@
 <template>
-  <div class="main">
+  <div class="main" style="height: auto">
   
-    <table>
-
-      <tr>
-        <td style="width:60%">
-          <div class="container">
+    <div class="row" style="background-color: #f9ba81; height:auto; padding-top: 20px;padding-bottom: 20px">
+      <div class="col-lg-6 col-md-12">
+        <div class="container">
               <div class="map-container">
                 <h1 style="padding-bottom: 50px">{{ t("title") }}</h1>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d353.7919557890253!2d20.508788450058383!3d44.81472632455624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7b0f0f77e315%3A0x8fa1924f9f77ea9e!2sPatrisa%20Lumumbe!5e0!3m2!1ssr!2srs!4v1719675826508!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <a href="#" class="button">{{t("button")}}</a>
               </div>
             </div>
-        </td>
+            
 
-        <td style="width:45%;padding-right: 250px">
+      </div>
+
+
+      <div class="col-lg-6 col-md-12" style="padding-right: 250px">
+        <div class="card" >
           <h1>{{ t("title2") }} </h1>
-          <div class="about">
+          <div class="about" style="border-style: ridge; font-size: 25px;"> 
             {{ t("about") }}
           </div>
-        </td>
 
-      </tr>
-    </table>
+        </div>
+        
+
+
+      </div>
+
+
+
+
+    </div>
+  
   </div>
   <div>
   </div>
   
-  <footer>&copy; 2024 Google Maps on KineskiRestoran. All rights reserved.</footer>
+  <footer style="background-color: #f9ba81; padding-bottom: 1000px; padding-top: 20px">&copy; 2024 Google Maps on KineskiRestoran. All rights reserved.</footer>
   
 
 
@@ -55,6 +65,10 @@ export default {
   .about{
     padding-top: 50px;
     font-size: 20px;
+  }
+
+  *{
+    background-color: ;
   }
 
   .main{
@@ -87,9 +101,9 @@ export default {
     max-width:800px;
     margin:0 auto;
     padding: 40px 20px;
-    background-color: #fff;
-    box-shadow:0 4px 8px rgba(0,0,0,0.1);
-    border-radius:10px;
+    background-color: #f9ba81;
+    box-shadow:0 4px 8px rgba(0,0,0,0.5);
+    border-radius:125px;
     column-span:all;
 
   }

@@ -1,6 +1,7 @@
 
 <template>
-  <h1>{{ t("title1") }} </h1>
+  <div class="main">
+    <h1>{{ t("title1") }} </h1>
   <div id="myCarousel1" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -14,21 +15,21 @@
 
       <div class="item active">
         <div class="d-flex justify-content-center" >
-          <img src="../assets/slika1.png" >
+          <img src="../assets/slika1.png" style="width:700px;height: 500px">
         </div>
         
       </div>
 
       <div class="item" >
         <div class="  d-flex justify-content-center" >
-          <img src="../assets/slika2.png">
+          <img src="../assets/slika2.png" style="width:700px;height: 500px">
         </div>
         
       </div>
 
       <div class="item d-flex justify-content-center">
         <div class="d-flex justify-content-center" >
-          <img src="../assets/slika3.png" >
+          <img src="../assets/slika3.png" style="width:700px;height: 500px">
         </div>
         
       </div>
@@ -59,21 +60,21 @@
     <div class="carousel-inner">
       <div class="item active">
         <div class="d-flex justify-content-center" >
-          <img src="../assets/hrana1.png" >
+          <img src="../assets/hrana1.png" style="width:900px;height: 600px">
         </div>
         
       </div>
 
       <div class="item">
         <div class="  d-flex justify-content-center" >
-          <img src="../assets/hrana2.png" >
+          <img src="../assets/hrana2.png" style="width:900px;height: 600px">
         </div>
         
       </div>
 
       <div class="item d-flex justify-content-center">
         <div class="d-flex justify-content-center" >
-          <img src="../assets/hrana3.png">
+          <img src="../assets/hrana3.png" style="width:650px;height: 600px">
         </div>
         
       </div>
@@ -81,7 +82,7 @@
 
       <div class="item d-flex justify-content-center">
         <div class="d-flex justify-content-center" >
-          <img src="../assets/hrana4.png" >
+          <img src="../assets/hrana4.png" style="width:900px;height: 600px">
         </div>
         
       </div>
@@ -98,16 +99,24 @@
     </a>
   </div>
 
-  <h1>{{ t("title3") }}</h1>
-  <iframe width="560" height="515" src="https://www.youtube.com/embed/7y_z7Ppv11w?si=zwxaz9b-Dfn88VJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <h1 style="padding-top: 50px;">{{ t("title3") }}</h1>
+  <iframe width="1200" height="725" src="https://www.youtube.com/embed/7y_z7Ppv11w?si=zwxaz9b-Dfn88VJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+  </div>
+  
 
 
 </template>
 
-<style>
-
+<style scoped>
   iframe{
-    padding-top: 50px;
+    padding-top: 15px;
+    padding-bottom: 50px;
+  }
+
+  .main{
+    background-color: #f9ba81;
   }
 </style>
 
