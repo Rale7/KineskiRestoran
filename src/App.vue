@@ -21,12 +21,22 @@
 
   import Navigation from "@/components/Navigation.vue"
   import Footer from "@/components/Footer.vue"
+  import users from "@/data/users"
+  import menu from "@/data/menu"
 
   export default {
     name: "App",
     components: {
       Navigation, Footer
-    }
+    },
+    created() {
+        if (localStorage.getItem('menu') == null) {
+            localStorage.setItem('menu', JSON.stringify(menu));
+        }
+        if (localStorage.getItem('allUsers') == null) {
+            localStorage.setItem("allUsers", JSON.stringify(users));
+        }
+    },
   } 
 
 </script>

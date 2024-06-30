@@ -22,6 +22,14 @@
         align-items: center;
         justify-content: center;
         font-style: italic;
+        font-size: 1.3vh;
+        z-index: 10;
+    }
+
+    @media screen and (max-width: 900px){
+        .footer {
+            font-size: 1vh;
+        }
     }
 
 </style>

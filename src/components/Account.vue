@@ -1,10 +1,10 @@
 <template>
-    <div class="dropdown">
-        <button class="dropbtn" id="account-dropdown-button">
+    <div class="my-dropdown">
+        <button class="my-dropbtn" id="account-dropdown-button">
             <i class='bx bx-user-circle' id="font-icon"></i>&nbsp;
             {{ t("helloMessage") }}{{ username }}
         </button>
-        <div class="dropdown-content">
+        <div class="my-dropdown-content">
         <a>
             <i class='bx bxs-cart'></i>&nbsp;
             {{ t('cart') }}
@@ -31,12 +31,12 @@
         font-size: 30px;
     }
 
-    .dropdown {
+    .my-dropdown {
         float: right;
         overflow: hidden;
     }
 
-    .dropdown .dropbtn {
+    .my-dropdown .my-dropbtn {
         font-size: 18px;    
         border: none;
         outline: none;
@@ -50,7 +50,7 @@
         min-width: 180px;
     }
 
-    .dropdown-content {
+    .my-dropdown-content {
         display: none;
         position: absolute;
         background-color: #f67963;
@@ -59,7 +59,7 @@
         z-index: 1;
     }
 
-    .dropdown-content a {
+    .my-dropdown-content a {
         float: none;
         color: black;
         padding: 12px 16px;
@@ -69,31 +69,31 @@
         text-align: left;
     }
 
-    .dropdown:hover .dropbtn {
+    .my-dropdown:hover .my-dropbtn {
         background-color: $hover-color;
         color: $font-color;
     }
 
-    .dropdown-content a:hover {
+    .my-dropdown-content a:hover {
         background-color: $hover-color;
         color: $font-color;
         cursor: pointer;
     }
 
-    .dropdown:hover .dropdown-content {
+    .my-dropdown:hover .my-dropdown-content {
         display: block;
     }
 
     @media screen and (max-width: 890px) {
-        .topnav .dropdown .dropbtn {
+        .topnav .my-dropdown .my-dropbtn {
             display: none;
         }
     }
 
     @media screen and (max-width: 890px) {    
-        .topnav.responsive .dropdown {float: none;}
-        .topnav.responsive .dropdown-content {position: relative;}
-        .topnav.responsive .dropdown .dropbtn {
+        .topnav.responsive .my-dropdown {float: none;}
+        .topnav.responsive .my-dropdown-content {position: relative;}
+        .topnav.responsive .my-dropdown .my-dropbtn {
             display: block;
             width: 100%;
             text-align: left;

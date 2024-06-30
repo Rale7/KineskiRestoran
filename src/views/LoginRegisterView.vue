@@ -36,18 +36,12 @@
 
     import LoginComponent from '@/components/LoginComponent.vue'
     import RegisterComponent from '@/components/RegisterComponent.vue'
-    import users from '@/data/users';
 
     export default {
         name: "LoginRegisterView",
         components: {
             LoginComponent, RegisterComponent
         },
-        created() {
-            if (localStorage.getItem('allUsers') == null) {
-                localStorage.setItem("allUsers", JSON.stringify(users));
-            }
-        }
     }
 
 </script>
