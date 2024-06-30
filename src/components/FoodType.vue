@@ -1,9 +1,9 @@
 <template>
-    <div class="container-img">
+    <div class="container-img" @click="goToMeal(myType)">
         <div class="dark-div"></div>
-        <img :src="MyImg" alt="">
+        <img :src="imgSrc" alt="">
         <div class="type-text">
-            {{ FoodName }}
+            {{ typeName }}
         </div>
     </div>
 </template>
@@ -71,8 +71,14 @@
 export default {
     name: "FoodType",
     props: {
-        "FoodName": String,
-        "MyImg": String
+        "myType": String,
+        "typeName": String,
+        "imgSrc": String
+    },
+    methods: {
+        goToMeal(name) {
+            this.$router.push('/menu/' + name);
+        }
     }
 }
 

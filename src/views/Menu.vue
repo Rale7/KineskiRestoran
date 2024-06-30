@@ -5,9 +5,10 @@
                 <h1>{{ t("menu") }}</h1>
                 <div  class="row" id="types-of-food">
                     <div v-for="type in typeOfMeals" :key='type.id' class="col-sm-12 col-md-6">
-                        <FoodType 
-                            :FoodName="t(type.name)" 
-                            :MyImg="type.img"
+                        <FoodType
+                            :myType="type.name"
+                            :typeName="t(type.name)" 
+                            :imgSrc="type.img"
                         ></FoodType>
                     </div> 
                 </div>
@@ -69,7 +70,7 @@ export default {
             });
 
             return meals;
-        }
+        },
     }
 }
 
