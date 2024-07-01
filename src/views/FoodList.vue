@@ -82,6 +82,7 @@
         width: 100%;
         border-radius: 20px;
         border: none;
+        box-shadow: none !important;
         color: $font-color;
     }
 
