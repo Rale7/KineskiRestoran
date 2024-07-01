@@ -223,7 +223,6 @@ input:focus {
   .image,
   .quantity,
   .description {
-    width: 100%;
     text-align: center;
     margin: 6px 0;
   }

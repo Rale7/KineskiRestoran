@@ -41,7 +41,7 @@
 </div>
     <div class="container">
 
-      <div class="col-lg-12" style="text-align: right;padding-right: 200px;font-size: 20px;">
+      <div class="col-lg-12" style="text-align: right; font-size: 20px; width: 90%">
         {{t("total")}}: {{ total }}RSD
       </div>
 
@@ -50,10 +50,9 @@
       </div>
 
 
-      <div class="col-lg-12">
-        <button type="button" class="btn btn-danger" @click="poruci()"
-        style="background-color: #941816; width:100px; height: 35px"
-        >{{t("button")}}
+      <div class="col-lg-12 order-button-wrapper">
+        <button type="button" class="btn order-button" @click="poruci()">
+          {{t("button")}}
         </button>
       </div>
 
@@ -63,26 +62,16 @@
 
 
 
-<style scoped>
+<style lang="scss" scoped>
     @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  margin: 0;
-  background-color: #7EC855;
-  font-family: 'Roboto', sans-serif;
-}
+$bg-color: #941816;
+$font-color: #f9ba81;
+$hover-color: #7c1412;
 
 .shopping-cart {
-  width: 750px;
-  height: 423px;
+  width: 70%;
+  height: auto;
   margin: 80px auto;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
@@ -90,6 +79,10 @@ body {
 
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 990px) {
+      width: 100%;
+  }
 }
 
 .title {
@@ -206,6 +199,26 @@ button[class*=btn] {
   border: none;
   cursor: pointer;
 }
+.order-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.order-button {
+    background-color: $bg-color !important; 
+    width: 250px !important; 
+    height: 50px !important;
+    color: $font-color;
+    border-radius: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: none !important;
+}
+
+.order-button:hover {
+  background-color: $hover-color !important;
+}
 
 .minus-btn img {
   margin-bottom: 3px;
@@ -246,12 +259,11 @@ input:focus {
   .image,
   .quantity,
   .description {
-    width: 100%;
     text-align: center;
     margin: 6px 0;
   }
   .buttons {
-    margin-right: 20px;
+    margin-right: 10px;
   }
   
 }
