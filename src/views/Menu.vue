@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-sm-12" id="food-menu">
                 <h1>{{ t("menu") }}</h1>
+                <DownloadMenu></DownloadMenu>
                 <div  class="row" id="types-of-food">
                     <div v-for="type in typeOfMeals" :key='type.id' class="col-sm-12 col-md-6">
                         <FoodType
@@ -38,6 +39,7 @@
 
 import { useI18n } from "vue-i18n";
 import FoodType from "@/components/FoodType.vue"
+import DownloadMenu from "@/components/DownloadMenu.vue";
 
 export default {
     setup() {
@@ -48,7 +50,7 @@ export default {
     },
     name: "Menu",
     components: {
-        FoodType
+        FoodType, DownloadMenu
     },
     data() {
         return {

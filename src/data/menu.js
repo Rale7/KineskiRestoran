@@ -26,7 +26,8 @@ const menu = [
     {
         "name": "drinks",
         "id": 0,
-        "img": "/img/food-types/drink-pict.jpg"
+        "img": "/img/food-types/drink-pict.jpg",
+        "meals": []
     },
     {
         "name": "appetizers",
@@ -37,12 +38,14 @@ const menu = [
     {
         "name": "meal",
         "id": 2,
-        "img": "/img/food-types/meal-pict.jpg"
+        "img": "/img/food-types/meal-pict.jpg",
+        "meals": []
     },
     {
         "name": "desert",
         "id": 3,
-        "img": "/img/food-types/desert-pict.jpg"
+        "img": "/img/food-types/desert-pict.jpg",
+        "meals": []
     },
 ];
 
