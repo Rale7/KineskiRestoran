@@ -46,6 +46,7 @@
 
     .login-form h1 {
         color: $font-color;
+        margin-bottom: 40px;
     }
 
     .login-form input {

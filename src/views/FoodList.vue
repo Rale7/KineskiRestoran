@@ -4,7 +4,9 @@
             <div class="col-sm-12 col-md-3">
                 <div class="search-div">
                     <h1>{{ t("search") }} <i class='bx bx-search'></i></h1>
-                    <input type="text" v-model="name">
+                    <hr>
+                    <input @input="filter()" type="text" v-model="name" :placeholder="t('name')">
+                    <hr>
                     <div class="slide-container">
                         <div class="slide-container-heading">
                             <h4>{{ t("bigPortion") }}</h4>
@@ -17,6 +19,7 @@
                             {{ value1 }}-{{ value2 }}
                         </div>
                     </div>
+                    <hr>
                     <div class="slide-container">
                         <div class="slide-container-heading">
                             <h4>{{ t("smallPortion") }}</h4>
@@ -29,15 +32,17 @@
                             {{ value3 }}-{{ value4 }}
                         </div>
                     </div>
-                  <div class="btn-group my-btn-group">
+                    <hr>
+                <div class="btn-group my-btn-group">
                     <button type="button" class="btn dropdown-toggle my-dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ t(sortingType) }}
                     </button>
-                    <ul class="dropdown-menu w-100">
-                        <li><a class="dropdown-item">{{ t('name-asc') }}</a></li>
-                        <li><a class="dropdown-item">{{ t('name-desc') }}</a></li>
-                        <li><a class="dropdown-item">{{ t('score-asc') }}</a></li>
-                        <li><a class="dropdown-item">{{ t('score-desc') }}</a></li>
+                    <ul class="dropdown-menu w-100 my-dropdown-menu">
+                        <li><hr class="dropdown-divider my-divider"></li> 
+                        <li><a class="dropdown-item" @click="sortingType='name-asc'; filter()">{{ t('name-asc') }}</a></li>
+                        <li><a class="dropdown-item" @click="sortingType='name-desc'; filter()">{{ t('name-desc') }}</a></li>
+                        <li><a class="dropdown-item" @click="sortingType='score-asc'; filter()">{{ t('score-asc') }}</a></li>
+                        <li><a class="dropdown-item" @click="sortingType='score-desc'; filter()">{{ t('score-desc') }}</a></li>
                     </ul>
                     </div>
                 </div> 
@@ -63,16 +68,49 @@
     $font-color: #f9ba81;
     $hover-color: #7c1412;
 
+    .search-div h1 {
+        margin-bottom: 30px;
+    }
+
     .my-btn-group {
-        width: 90%;
+        width: 100%;
         margin-bottom: 20px;
     }
 
     .my-dropdown-button {
         width: 100%;
         border-radius: 20px;
-        border: 1px solid $font-color;
+        border: none;
         color: $font-color;
+    }
+
+    .my-dropdown-button.show {
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .my-dropdown-menu {
+        background-color: $bg-color;
+        border: none;
+        border-radius: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        cursor: pointer;
+        transition: display 0.5s ease !important;
+    }
+
+    .my-dropdown-menu a:hover {
+        background-color: $hover-color;
+    }
+
+    .my-dropdown-menu a {
+        color: $font-color;
+        text-align: center;
+    }
+
+    .my-dropdown-menu hr {
+        color: $font-color !important;
     }
 
     .search-div {
@@ -81,6 +119,24 @@
         color: $font-color;
         border-radius: 20px;
         padding-top: 20px;
+    }
+
+    .search-div input[type="text"] {
+        border-radius: 2px;
+        border: none;
+        height: 30px;
+        font-size: 20px;
+        background-color: lighten($color: $bg-color, $amount: 5);
+        padding: 4px;
+        color: $font-color;
+    }
+
+    .search-div input[type="text"] {
+        outline: none;
+    }
+
+    .search-div input[type="text"]::placeholder {
+        color: transparentize($color: $font-color, $amount: 0.5);
     }
 
     .slide-container {
@@ -266,11 +322,17 @@ export default {
             allMeals.forEach(meal => {
                 
                 if ( downBigBorder < meal['big-portion-price'] && meal['big-portion-price'] < upBigBorder &&
-                    downSmallBorder < meal['small-portion-price'] && meal['small-portion-price'] < upSmallBorder
-                ) {
+                    downSmallBorder < meal['small-portion-price'] && meal['small-portion-price'] < upSmallBorder &&
+                    new RegExp(this.name, 'i').test(this.t(meal['name']))) {
                     this.meals.push(meal);
                 }
             });
+
+            if (this.sortingType == 'name-asc') {
+                this.meals.sort((a, b) => this.t(a['name']).toLowerCase().localeCompare(this.t(b['name']).toLowerCase()));
+            } else if (this.sortingType == 'name-desc') {
+                this.meals.sort((a, b) => this.t(b['name']).toLowerCase().localeCompare(this.t(a['name']).toLowerCase()));
+            }
         }
     },
     data() {
@@ -307,18 +369,26 @@ export default {
         "bigPortion": "Big portion price",
         "smallPortion": "Small portion price",
         "name-asc": "Name ascending",
+        "name": "Name",
         "name-desc": "Name descending",
         "score-asc": "Score ascending",
-        "score-desc": "Score descending"
+        "score-desc": "Score descending",
+        "spring-rolls": "Spring rolls",
+        "bao-buns": "Bao buns",
+        "egg-rolls": "Egg rolls"
     },
     "rs": {
         "search": "Претрага",
         "bigPortion": "Цена велике порције",
         "smallPortion": "Цена мале порције",
+        "name": "Назив",
         "name-asc": "Назив растуће",
         "name-desc": "Назив опадајуће",
         "score-asc": "Оцена растуће",
-        "score-desc": "Оцена опадајуће"
+        "score-desc": "Оцена опадајуће",
+        "spring-rolls": "Пролећне ролнице",
+        "bao-buns": "Бао бунс",
+        "egg-rolls": "Ролнице са јајима"
     }
 }
 </i18n>
