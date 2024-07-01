@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-lg-4 col-xl-3">
                 <div class="search-div">
                     <h1>{{ t("search") }} <i class='bx bx-search'></i></h1>
                     <hr>
@@ -47,7 +47,7 @@
                     </div>
                 </div> 
             </div>
-            <div class="col-sm-12 col-md-9">
+            <div class="col-sm-12 col-lg-8 col-xl-9">
                 <div class="row">
                 <MealCard v-for="meal in meals" 
                 :key="meal.id" 
