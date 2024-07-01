@@ -49,7 +49,7 @@ export default {
 
 
 
-<style>
+<style scoped>
 
   iframe{
     width: 700px;
