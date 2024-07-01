@@ -23,7 +23,7 @@
                         <div class="price-right">{{meal['small-portion-price']}}</div>
                     </div>
                 </div>
-                <StarRating :value="4.25"></StarRating>
+                <StarRating :value="4.75"></StarRating>
                 <div class="amount-wrapper">
                     <div class="amount-div">
                         <button class="amount-left" @click="changeAmount(-1)">

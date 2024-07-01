@@ -33,6 +33,8 @@
                         </div>
                     </div>
                     <hr>
+                    <DownloadMenu></DownloadMenu>
+                    <hr>
                 <div class="btn-group my-btn-group">
                     <button type="button" class="btn dropdown-toggle my-dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ t(sortingType) }}
@@ -239,6 +241,7 @@
 <script>
 
 import MealCard from "@/components/MealCard.vue"
+import DownloadMenu from "@/components/DownloadMenu.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
@@ -250,7 +253,7 @@ export default {
     },
     name: "FoodList",
     components: {
-        MealCard
+        MealCard, DownloadMenu
     },
     methods: {
         getMealData() {
