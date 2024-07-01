@@ -61,14 +61,6 @@ export default {
     font-size: 2px;
   }
 
-  *{
-   
-  }
-
-  .main{
-    
-  }
-
   table{
     margin-left:auto;
     margin-right: auto;

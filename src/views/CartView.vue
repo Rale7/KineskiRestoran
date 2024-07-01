@@ -15,13 +15,13 @@
     </div>
  
     <div class="image">
-      <img src="../assets/hrana1.png" alt="" style="width:90px; height:70px">
+      <img :src="product.img" alt="" style="width:90px; height:70px">
     </div>
  
     <div class="description">
       <span>{{product.naziv}}</span>
-      <span>{{product.opis}}</span>
-      <span>{{ product.cena }}RSD/kom</span>
+      <!--<span>{{product.opis}}</span>-->
+      <span>{{ product.cena }}RSD/{{t("pcs")}}</span>
     </div>
  
     <div class="quantity">
@@ -51,8 +51,8 @@
 
 
       <div class="col-lg-12">
-        <button type="button" class="btn btn-success" @click="poruci()"
-        style="background-color: green; width:100px; height: 30px"
+        <button type="button" class="btn btn-danger" @click="poruci()"
+        style="background-color: #941816; width:100px; height: 35px"
         >{{t("button")}}
         </button>
       </div>
@@ -279,7 +279,7 @@ export default {
         },
         created(){
             if(localStorage.getItem("products") == null){
-                var prod1 = {
+                /*var prod1 = {
                     naziv:"pirinac",
                     opis:"dobar pirinac",
                     cena:50,
@@ -308,7 +308,7 @@ export default {
                 this.products.push(prod3)
                 for(let i =0;i<this.products.length;i++){
                   this.total = this.total + this.products[i].ukcena
-                }
+                }*/
                 localStorage.setItem("products",JSON.stringify(this.products))
             }else{
                 this.products = JSON.parse(localStorage.getItem("products"))
@@ -349,8 +349,16 @@ export default {
 
             },
             poruci(){
+              let ord = []
+              if(localStorage.getItem("orders") != null){
+                ord = JSON.parse(localStorage.getItem("orders"))
+              }
+              for(let i =0;i<this.products.length;i++){
+                ord.push(this.products[i])
+              }
               this.products=[]
               localStorage.removeItem("products")
+              localStorage.setItem("orders",JSON.stringify(ord))
               this.message = true
             }
         }
@@ -365,6 +373,7 @@ export default {
           "message":"Thank you for your order!",
           "total":"Total",
           "cart" : "My cart",
+          "pcs":"piece"
            
       }, 
       "rs": {
@@ -372,6 +381,7 @@ export default {
           "message":"Хвала на поруџбини!",
           "total":"Укупно",
           "cart":"Моја корпа",
+          "pcs":"ком"
       }
   }
 </i18n>

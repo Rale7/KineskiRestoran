@@ -67,8 +67,12 @@
     }
 
     .active {
-        text-decoration: underline !important;
-        color: $font-color;
+        color: $bg-color !important;
+        background-color: $font-color;
+    }
+
+    .active:hover {
+        background-color: darken($color: $font-color, $amount: 8) !important;
     }
 
     .topnav .icon {
