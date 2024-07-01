@@ -12,13 +12,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../assets/slika1.png" class="d-block w-100" alt="...">
+      <img src="../assets/slika1.png" class="d-block w-100 img-fluid" alt="...">
     </div>
-    <div class="carousel-item">
-      <img src="../assets/slika2.png" class="d-block w-100" alt="...">
+    <div class="carousel-item my-carousel-item">
+      <img src="../assets/slika2.png" class="d-block w-100 img-fluid" alt="...">
     </div>
-    <div class="carousel-item">
-      <img src="../assets/slika3.png" class="d-block w-100" alt="...">
+    <div class="carousel-item my-carousel-item">
+      <img src="../assets/slika3.png" class="d-block w-100 img-fluid" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -43,6 +43,29 @@
 </template>
 
 <style scoped>
+
+.carousel-inner {
+  height: 0;
+  padding-bottom: 25%;
+}
+
+.carousel-item {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+  .main {
+    margin-top: 40px;
+  }
+
   h1{
     font-weight: bold;
     margin-top: 0px;
@@ -52,21 +75,9 @@
     height:1000px
   }
 
-  .item img{
-    width: 100%;
-    height: 100% !important;
-    object-fit: cover;
-
-  }
-
-
   iframe{
     padding-top: 15px;
     padding-bottom: 50px;
-  }
-
-  .main{
-    background-color: #f9ba81;
   }
 </style>
 
