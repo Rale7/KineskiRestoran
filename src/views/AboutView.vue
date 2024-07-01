@@ -1,118 +1,93 @@
 <template>
-  <div class="main" style="height: auto">
-  
-    <div class="row" style="background-color: #f9ba81; height:auto; padding-top: 20px;padding-bottom: 20px">
-      <div class="col-lg-6 col-md-12">
-        <div class="container">
-              <div class="map-container">
-                <h1 style="padding-bottom: 50px;font-weight: bold">{{ t("title") }}</h1>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d353.7919557890253!2d20.508788450058383!3d44.81472632455624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7b0f0f77e315%3A0x8fa1924f9f77ea9e!2sPatrisa%20Lumumbe!5e0!3m2!1ssr!2srs!4v1719675826508!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <a href="#" class="button">{{t("button")}}</a>
-              </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="map-container">
+                    <h1 style="padding-bottom: 50px; font-weight: bold; margin-top: 20px;">{{ t("title") }}</h1>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d353.7919557890253!2d20.508788450058383!3d44.81472632455624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7b0f0f77e315%3A0x8fa1924f9f77ea9e!2sPatrisa%20Lumumbe!5e0!3m2!1ssr!2srs!4v1719675826508!5m2!1ssr!2srs"
+                        width="600"
+                        height="450"
+                        style="border: 0"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <a href="#" class="button">{{ t("button") }}</a>
+                </div>
             </div>
-      </div>
 
-      <div class="col-lg-6 col-md-12" style="padding-right: 250px">
-        <div class="card" >
-          <h1 style="font-weight: bold">{{ t("title2") }} </h1>
-          <div class="about" style="border-style: ; font-size: 27px;text-align: center;"> 
-            {{ t("about") }}
-          </div>
+            <div class="col-md-12 col-lg-6">
+                <div>
+                    <h1 class="about-h">{{ t("title2") }}</h1>
+                    <div class="about" style="font-size: 27px; text-align: center">
+                        {{ t("about") }}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  
-  </div>
-  <div>
-  </div>
-  
-  <footer style="background-color: #f9ba81; padding-bottom: 1000px; padding-top: 20px">&copy; 2024 Google Maps on KineskiRestoran. All rights reserved.</footer>
-  
-
-
+    <footer style="background-color: #f9ba81; padding-bottom: 30px;">
+        &copy; 2024 Google Maps on KineskiRestoran. All rights reserved.
+    </footer>
 </template>
-
 
 <script>
 import { useI18n } from "vue-i18n";
 
 export default {
-        setup() {
-            const {t} = useI18n();
-            return {
-                t,
-            }
-        },
-      }
-
+    setup() {
+        const { t } = useI18n();
+        return {
+            t,
+        };
+    },
+};
 </script>
-
-
 
 <style scoped>
 
-  iframe{
-    width: 700px;
-    height: 600px;
-  }
+.about-h {
+  font-weight: bold;
+  margin-top: 20px;
+}
 
-  .about{
+iframe {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.about {
     padding-top: 50px;
     font-size: 2px;
-  }
+}
 
-  table{
-    margin-left:auto;
+table {
+    margin-left: auto;
     margin-right: auto;
+}
 
-  }
-  
-  td{
+td {
     text-align: center;
-  }
+}
 
-  *{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+body {
+    font-family: "Poppins", sans-serif;
+}
 
-
-  body{
-    font-family: "Poppins",sans-serif;
-    
-  }
-
-  .container{
-    max-width:800px;
-    margin:0 auto;
-    padding: 40px 20px;
-    background-color: #f9ba81;
-    box-shadow:0 4px 8px rgba(0,0,0,0.5);
-    border-radius:125px;
-    column-span:all;
-
-  }
-
-
-  .button{
+.button {
     display: inline-block;
     background-color: #941816;
-    color:#fff;
+    color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     margin-top: 20px;
-    transition:background-color 0.3s;
-    
-  }
+    transition: background-color 0.3s;
+}
 
-  .button:hover{
+.button:hover {
     background-color: #7c1412;
-  }
-
+}
 </style>
-
 
 <i18n>
   {
@@ -130,5 +105,3 @@ export default {
       }
   }
 </i18n>
-
-

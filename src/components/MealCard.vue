@@ -1,6 +1,6 @@
 <template>
-    <div class="col-sm-12 col-md-4">
-        <div class="card my-card" style="width: 18rem;">
+    <div class="col-sm-12 col-lg-6 col-xl-4">
+        <div class="card w-100 my-card" style="width: 18rem;">
             <img :src="imgSrc" class="card-img-top" alt="...">
             <div class="card-body my-card-body">
                 <h3 class="card-title">{{ t(mealName) }}</h3>
@@ -47,6 +47,7 @@
     .my-card img {
         border-radius: 20px 20px 0 0;
         height: 190px;
+        object-fit: cover;
     }
 
     .my-card-body h3 {

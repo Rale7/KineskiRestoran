@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-lg-4 col-xl-3">
                 <div class="search-div">
                     <h1>{{ t("search") }} <i class='bx bx-search'></i></h1>
                     <hr>
@@ -33,6 +33,8 @@
                         </div>
                     </div>
                     <hr>
+                    <DownloadMenu></DownloadMenu>
+                    <hr>
                 <div class="btn-group my-btn-group">
                     <button type="button" class="btn dropdown-toggle my-dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ t(sortingType) }}
@@ -47,7 +49,7 @@
                     </div>
                 </div> 
             </div>
-            <div class="col-sm-12 col-md-9">
+            <div class="col-sm-12 col-lg-8 col-xl-9">
                 <div class="row">
                 <MealCard v-for="meal in meals" 
                 :key="meal.id" 
@@ -82,6 +84,7 @@
         width: 100%;
         border-radius: 20px;
         border: none;
+        box-shadow: none !important;
         color: $font-color;
     }
 
@@ -238,6 +241,7 @@
 <script>
 
 import MealCard from "@/components/MealCard.vue"
+import DownloadMenu from "@/components/DownloadMenu.vue";
 import { useI18n } from "vue-i18n";
 
 export default {
@@ -249,7 +253,7 @@ export default {
     },
     name: "FoodList",
     components: {
-        MealCard
+        MealCard, DownloadMenu
     },
     methods: {
         getMealData() {

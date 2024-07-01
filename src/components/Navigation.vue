@@ -18,6 +18,9 @@
         </div>
         <a href="javascript:void(0);" style="font-size:30px;" class="icon" @click="dropdownMenu()">&#9776;</a>
     </div>
+    <div v-if="this.$route.fullPath != '/login' && this.$route.fullPath != '/register' ">
+        <BreadCrumb/>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -128,6 +131,7 @@
     import Language from "@/components/Languages.vue"
     import AccountButton from "@/components/Account.vue"
     import { useI18n } from "vue-i18n";
+    import BreadCrumb from './BreadCrumbs.vue';
 
     export default{
         setup() {
@@ -162,7 +166,7 @@
                 }
             },
         }, components : {
-            Language, AccountButton
+            Language, AccountButton, BreadCrumb
         },
     }
 
