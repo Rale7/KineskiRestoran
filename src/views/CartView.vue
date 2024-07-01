@@ -353,11 +353,21 @@ export default {
               if(localStorage.getItem("orders") != null){
                 ord = JSON.parse(localStorage.getItem("orders"))
               }
+
+              let arr=[]
               for(let i =0;i<this.products.length;i++){
-                ord.push(this.products[i])
+                arr.push(this.products[i])
               }
               this.products=[]
               localStorage.removeItem("products")
+              
+              let item = {
+                ime : JSON.parse(localStorage.getItem("logged-user"))["username"],
+                prods : arr,
+              }
+              
+              ord.push(item)
+              
               localStorage.setItem("orders",JSON.stringify(ord))
               this.message = true
             }
