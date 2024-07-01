@@ -49,7 +49,7 @@ export default {
 
 
 
-<style>
+<style scoped>
 
   iframe{
     width: 700px;
@@ -59,14 +59,6 @@ export default {
   .about{
     padding-top: 50px;
     font-size: 2px;
-  }
-
-  *{
-   
-  }
-
-  .main{
-    
   }
 
   table{

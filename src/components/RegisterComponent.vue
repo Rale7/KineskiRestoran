@@ -51,6 +51,7 @@
 
     .register-form h1 {
         color: $font-color;
+        margin-bottom: 40px;
     }
 
     .register-form input {
