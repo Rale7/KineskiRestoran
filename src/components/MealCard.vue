@@ -4,6 +4,9 @@
             <img :src="imgSrc" class="card-img-top" alt="...">
             <div class="card-body my-card-body">
                 <h3 class="card-title">{{ t(mealName) }}</h3>
+                <div class="rate-div">
+                    <i class='bx bxs-star'></i>{{avgRate}}
+                </div>
                 <div class="price-div">
                     <div class="left">{{ t("smallPortion") }}</div>
                     <div class="right">{{ smallPrice }} RSD</div>
@@ -22,6 +25,12 @@
     $bg-color: #941816;
     $font-color: #f9ba81;
     $hover-color: #7c1412;
+
+    .rate-div {
+        color: $bg-color;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
 
     .price-div {
         display: flex;
@@ -52,7 +61,6 @@
 
     .my-card-body h3 {
         font-weight: bolder;
-        height: 70px;
     }
 
     .my-btn {
@@ -88,7 +96,8 @@ export default {
         "imgSrc": String,
         "smallPrice": Number,
         "bigPrice": Number,
-        "foodId": Number
+        "foodId": Number,
+        "avgRate": Number,
     },
     methods: {
         goToDetails(id) {
@@ -96,7 +105,7 @@ export default {
             const currentPath = this.$route.path;
             this.$router.push(`${currentPath}/${id}`);
         }
-    }
+    },
 }
 
 </script>
