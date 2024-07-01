@@ -55,6 +55,7 @@
                 :imgSrc="meal.img"
                 :smallPrice="meal['small-portion-price']"
                 :bigPrice="meal['small-portion-price']"
+                :foodId="meal['id']"
                 ></MealCard>
                 </div>
             </div>

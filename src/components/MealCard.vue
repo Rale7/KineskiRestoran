@@ -12,7 +12,7 @@
                     <div class="left">{{ t("bigPortion") }}</div>
                     <div class="right">{{ bigPrice }} RSD</div>
                 </div>
-                <a class="btn my-btn">{{ t("details") }}</a>
+                <a class="btn my-btn" @click="goToDetails(foodId)">{{ t("details") }}</a>
             </div>
         </div>
     </div>
@@ -86,7 +86,15 @@ export default {
         "mealName": String,
         "imgSrc": String,
         "smallPrice": Number,
-        "bigPrice": Number
+        "bigPrice": Number,
+        "foodId": Number
+    },
+    methods: {
+        goToDetails(id) {
+
+            const currentPath = this.$route.path;
+            this.$router.push(`${currentPath}/${id}`);
+        }
     }
 }
 
