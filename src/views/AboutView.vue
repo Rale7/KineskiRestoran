@@ -5,32 +5,21 @@
       <div class="col-lg-6 col-md-12">
         <div class="container">
               <div class="map-container">
-                <h1 style="padding-bottom: 50px">{{ t("title") }}</h1>
+                <h1 style="padding-bottom: 50px;font-weight: bold">{{ t("title") }}</h1>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d353.7919557890253!2d20.508788450058383!3d44.81472632455624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7b0f0f77e315%3A0x8fa1924f9f77ea9e!2sPatrisa%20Lumumbe!5e0!3m2!1ssr!2srs!4v1719675826508!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <a href="#" class="button">{{t("button")}}</a>
               </div>
             </div>
-            
-
       </div>
-
 
       <div class="col-lg-6 col-md-12" style="padding-right: 250px">
         <div class="card" >
-          <h1>{{ t("title2") }} </h1>
-          <div class="about" style="border-style: ridge; font-size: 25px;"> 
+          <h1 style="font-weight: bold">{{ t("title2") }} </h1>
+          <div class="about" style="border-style: ; font-size: 27px;text-align: center;"> 
             {{ t("about") }}
           </div>
-
         </div>
-        
-
-
       </div>
-
-
-
-
     </div>
   
   </div>
@@ -62,13 +51,18 @@ export default {
 
 <style>
 
+  iframe{
+    width: 700px;
+    height: 600px;
+  }
+
   .about{
     padding-top: 50px;
-    font-size: 20px;
+    font-size: 2px;
   }
 
   *{
-    background-color: ;
+   
   }
 
   .main{

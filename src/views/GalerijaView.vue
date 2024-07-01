@@ -1,7 +1,8 @@
 
 <template>
+  <div class="contaienr">
   <div class="main">
-    <h1>{{ t("title1") }} </h1>
+    <h1 style="padding-top: 20px">{{ t("title1") }} </h1>
   <div id="myCarousel1" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -15,21 +16,21 @@
 
       <div class="item active">
         <div class="d-flex justify-content-center" >
-          <img src="../assets/slika1.png" style="width:700px;height: 500px">
+          <img src="../assets/slika1.png" >
         </div>
         
       </div>
 
       <div class="item" >
         <div class="  d-flex justify-content-center" >
-          <img src="../assets/slika2.png" style="width:700px;height: 500px">
+          <img src="../assets/slika2.png">
         </div>
         
       </div>
 
       <div class="item d-flex justify-content-center">
         <div class="d-flex justify-content-center" >
-          <img src="../assets/slika3.png" style="width:700px;height: 500px">
+          <img src="../assets/slika3.png">
         </div>
         
       </div>
@@ -45,8 +46,8 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
-  <h1>{{ t("title2") }} </h1>
+  
+  <h1 style="padding-top: 30px">{{ t("title2") }} </h1>
   <div id="myCarousel2" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -60,21 +61,21 @@
     <div class="carousel-inner">
       <div class="item active">
         <div class="d-flex justify-content-center" >
-          <img src="../assets/hrana1.png" style="width:900px;height: 600px">
+          <img src="../assets/hrana1.png">
         </div>
         
       </div>
 
       <div class="item">
         <div class="  d-flex justify-content-center" >
-          <img src="../assets/hrana2.png" style="width:900px;height: 600px">
+          <img src="../assets/hrana2.png" >
         </div>
         
       </div>
 
       <div class="item d-flex justify-content-center">
         <div class="d-flex justify-content-center" >
-          <img src="../assets/hrana3.png" style="width:650px;height: 600px">
+          <img src="../assets/hrana3.png">
         </div>
         
       </div>
@@ -82,7 +83,7 @@
 
       <div class="item d-flex justify-content-center">
         <div class="d-flex justify-content-center" >
-          <img src="../assets/hrana4.png" style="width:900px;height: 600px">
+          <img src="../assets/hrana4.png" >
         </div>
         
       </div>
@@ -104,12 +105,30 @@
 
 
   </div>
+</div>
   
 
 
 </template>
 
 <style scoped>
+  h1{
+    font-weight: bold;
+    margin-top: 0px;
+    padding-top: 10px;
+  }
+  .item{
+    height:1000px
+  }
+
+  .item img{
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+
+  }
+
+
   iframe{
     padding-top: 15px;
     padding-bottom: 50px;
