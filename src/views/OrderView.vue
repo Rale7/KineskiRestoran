@@ -246,7 +246,18 @@ import { useI18n } from "vue-i18n";
         },
         mounted(){
             if(localStorage.getItem("orders")!=null){
-                this.orders = JSON.parse(localStorage.getItem("orders"))
+              
+                let all = JSON.parse(localStorage.getItem("orders"))
+                for(let i=0;i<all.length;i++){
+                  
+                  
+                  if(JSON.parse(localStorage.getItem("logged-user"))["username"] == all[i].ime){
+                    
+                    for(let j=0;j<all[i].prods.length;j++){
+                      this.orders.push(all[i].prods[j])
+                    }
+                  }
+                }
 
             }
         },setup() {
