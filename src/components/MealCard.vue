@@ -71,6 +71,7 @@
         border-radius: 20px;
         font-weight: bold;
         width: 70%;
+        margin-top: 20px;
     }
 
     .my-btn:focus,

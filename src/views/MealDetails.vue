@@ -5,6 +5,7 @@
                 <div class="img-div">
                     <img :src="meal.img" alt="" />
                 </div>
+                <DownloadMenu></DownloadMenu>
             </div>
             <div class="col-sm-12 col-md-4">
                 <div class="data-div">
@@ -181,6 +182,7 @@ input[type='radio']:checked {
 
 <script>
 import StarRating from "@/components/StarRating.vue";
+import DownloadMenu from "@/components/DownloadMenu.vue";
 import { useI18n } from "vue-i18n";
 /*import appetizers from "@/data/menu.js"*/
 
@@ -200,7 +202,7 @@ export default {
         };
     },
     components: {
-        StarRating,
+        StarRating, DownloadMenu
     },
     methods: {
         getMeal() {
