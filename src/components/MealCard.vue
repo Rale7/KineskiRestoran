@@ -121,7 +121,10 @@ export default {
             "details": "See details",
             "spring-rolls": "Spring rolls",
             "bao-buns": "Bao buns",
-            "egg-rolls": "Egg rolls"
+            "egg-rolls": "Egg rolls",
+            "green-tea": "Green tea",
+            "juice": "Juice",
+            "wine": "Wine"
         },
         "rs": {
             "smallPortion": "Мала порција",
@@ -129,7 +132,10 @@ export default {
             "details": "Прикажи детаље",
             "spring-rolls": "Пролећне ролнице",
             "bao-buns": "Бао бунс",
-            "egg-rolls": "Ролнице са јајима"
+            "egg-rolls": "Ролнице са јајима",
+            "green-tea": "Зелени чај",
+            "juice": "Сок",
+            "wine": "Вино"
         }
     }
 </i18n>

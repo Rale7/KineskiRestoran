@@ -11,7 +11,6 @@
                         style="border: 0"
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <a href="#" class="button">{{ t("button") }}</a>
                 </div>
             </div>
 

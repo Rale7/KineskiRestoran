@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <h1 class="fw-bold" style="margin-top: 20px">{{t('bestGrade')}}</h1>
+        <h1 class="fw-bold">{{t('bestGrade')}}</h1>
         <div class="row w-100">
             <MealCard
                 v-for="meal in meals"
@@ -57,7 +57,7 @@
 
 <style lang="scss" scoped>
 #main {
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 .carousel-inner {
@@ -76,6 +76,10 @@
 .carousel-item img {
     height: 100%;
     object-fit: cover;
+}
+
+h1 {
+    margin: 40px 0;
 }
 </style>
 

@@ -5,9 +5,8 @@
                 <img src="../assets/my-logo.png" class="my-img">
             </router-link>
             <router-link to="/" :class="checkPath('/')">{{ t('home') }}</router-link>
-            <router-link to="/galery" :class="checkPath('galery')">{{ t('galery') }}</router-link>
+            <router-link to="/galery" :class="checkPath('/galery')">{{ t('galery') }}</router-link>
             <router-link to="/menu" :class="checkPath('/menu')">{{ t('menu') }}</router-link>
-            <router-link to="/delivery" :class="checkPath('/delivery')">{{ t('delivery') }}</router-link>
             <router-link to="/about" :class="checkPath('/about')">{{ t('about') }}</router-link>
             <Language></Language>
         </div>
@@ -151,7 +150,7 @@
                 }
             },
             checkPath(path) {
-                if (path === this.$route.path) {
+                if (this.$route.path == '/' && path == '/' || path != '/' && new RegExp(path, "i").test(this.$route.path)) {
                     return "active";
                 } else {
                     return "";

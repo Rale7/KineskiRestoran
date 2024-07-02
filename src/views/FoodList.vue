@@ -93,7 +93,7 @@
                         :mealName="meal.name"
                         :imgSrc="meal.img"
                         :smallPrice="meal['small-portion-price']"
-                        :bigPrice="meal['small-portion-price']"
+                        :bigPrice="meal['big-portion-price']"
                         :foodId="meal['id']"
                         :avgRate="getAvgRate(meal)"></MealCard>
                 </div>

@@ -116,6 +116,9 @@ export default {
         "spring-rolls": "Spring rolls",
         "bao-buns": "Bao buns",
         "egg-rolls": "Egg rolls",
+        "green-tea": "Green tea",
+        "juice": "Juice",
+        "wine": "Wine"
     },
     "rs": {
         "menu": "Јеловник",
@@ -130,6 +133,9 @@ export default {
         "bao-buns": "Бао бунс",
         "egg-rolls": "Ролнице са јајима",
         "bigPrice": "Цена велике порције",
+        "green-tea": "Зелени чај",
+        "juice": "Сок",
+        "wine": "Вино"
     }
 }
 </i18n>

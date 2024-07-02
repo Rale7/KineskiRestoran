@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" id="main">
         <div class="row">
             <div class="col-sm-12 col-md-8">
                 <div class="img-div">
@@ -55,6 +55,10 @@
 $bg-color: #941816;
 $font-color: #f9ba81;
 $hover-color: #7c1412;
+
+#main {
+    margin-bottom: 100px;
+}
 
 .img-div img {
     margin-top: 100px;
@@ -296,7 +300,10 @@ export default {
             "bao-buns": "Bao buns",
             "egg-rolls": "Egg rolls",
             "bigPrice": "Big portion price",
-            "smallPrice": "Small portion price"
+            "smallPrice": "Small portion price",
+            "green-tea": "Green tea",
+            "juice": "Juice",
+            "wine": "Wine"
         },
         "rs": {
             "cart": "Додај у корпу",
@@ -304,7 +311,10 @@ export default {
             "bao-buns": "Бао бунс",
             "egg-rolls": "Ролнице са јајима",
             "bigPrice": "Цена велике порције",
-            "smallPrice": "Цена мале порције"
+            "smallPrice": "Цена мале порције",
+            "green-tea": "Зелени чај",
+            "juice": "Сок",
+            "wine": "Вино"
         }
     }
 </i18n>
