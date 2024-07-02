@@ -20,7 +20,8 @@
             </div>
 
             <div class="description">
-            <span>{{o.naziv}}</span>
+            <span>{{t(o.naziv)}}</span>
+            <span>{{ t(o.velicina) }}</span>
             <!--<span>{{product.opis}}</span>-->
             <span>{{ o.cena }}RSD/{{t("pcs")}}</span>
             </div>
@@ -284,7 +285,21 @@ import { useI18n } from "vue-i18n";
             "cart" : "My cart",
             "order":"My orders"   ,
             "pcs":"pcs",
-            "pieces":"pieces"          
+            "pieces":"pieces",
+            "spring-rolls": "Spring rolls",
+            "bao-buns": "Bao buns",
+            "egg-rolls": "Egg rolls",
+            "green-tea": "Green tea",
+            "juice": "Juice",
+            "wine": "Wine",
+            "mala":"small portion",
+            "velika":"big portion",
+            "chicken-peanut":"Chicken with peanut sauce",
+            "jun-hoisin":"Beef in hoishin sauce",
+            "svin-ter":"Pork in teriyaki sauce"  ,
+            "poh-ban":"Fried banana",
+            "poh-cok": "Fried chocolate",
+            "poh-an": "Fried pineapple"   
         }, 
         "rs": {
             "button":"Поручи",
@@ -293,7 +308,21 @@ import { useI18n } from "vue-i18n";
             "cart":"Моја корпа",
             "order":"Моје наруџбине",
             "pcs":"ком",
-            "pieces":"комада"
+            "pieces":"комада",
+            "bao-buns": "Бао бунс",
+            "egg-rolls": "Ролнице са јајима",
+            "bigPrice": "Цена велике порције",
+            "green-tea": "Зелени чај",
+            "juice": "Сок",
+            "wine": "Вино",
+            "mala": "Мала порција",
+            "velika":"Велика порција",
+            "chicken-peanut":"Пилетина у кикирики сосу",
+            "jun-hoisin":"Јунетина у хоисин сосу",
+            "svin-ter":"Свињетина у терјаки сосу",
+            "poh-ban": "Похована банана",
+            "poh-cok":"Похована чоколада",
+            "poh-an": "Поховани ананас"
             
         }
     }

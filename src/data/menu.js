@@ -52,6 +52,68 @@ const drinks = [
     }
 ];
 
+
+const meal = [
+    {
+        "id": 1,
+        "name": "svin-ter",
+        "big-portion-price": 750,
+        "small-portion-price": 500,
+        "img": "/img/meal/svin-ter.png",
+        "rates": []
+    },
+    {
+        "id": 2,
+        "name": "jun-hoisin",
+        "big-portion-price": 900,
+        "small-portion-price": 600,
+        "img": "/img/meal/jun-hois.png",
+        "rates": []
+    },
+    {
+        "id": 3,
+        "name": "chicken-peanut",
+        "big-portion-price": 700,
+        "small-portion-price": 500,
+        "img": "/img/meal/pil-kikiriki.png",
+        "rates": []
+    },
+
+
+
+]
+
+const desert=[
+    {
+        "id": 1,
+        "name": "poh-cok",
+        "big-portion-price": 300,
+        "small-portion-price": 150,
+        "img": "/img/desert/poh-cok.png",
+        "rates": []
+    },
+    {
+        "id": 2,
+        "name": "poh-an",
+        "big-portion-price": 400,
+        "small-portion-price": 250,
+        "img": "/img/desert/poh-an.png",
+        "rates": []
+    },
+    {
+        "id": 3,
+        "name": "poh-ban",
+        "big-portion-price": 300,
+        "small-portion-price": 150,
+        "img": "/img/desert/poh-ban.png",
+        "rates": []
+    },
+
+
+
+]
+
+
 const menu = [
     {
         "name": "drinks",
@@ -69,13 +131,13 @@ const menu = [
         "name": "meal",
         "id": 2,
         "img": "/img/food-types/meal-pict.jpg",
-        "meals": []
+        "meals": meal
     },
     {
         "name": "desert",
         "id": 3,
         "img": "/img/food-types/desert-pict.jpg",
-        "meals": []
+        "meals": desert
     },
 ];
 

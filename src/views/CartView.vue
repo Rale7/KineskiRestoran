@@ -15,7 +15,8 @@
             </div>
 
             <div class="description">
-                <span>{{ product.naziv }}</span>
+                <span>{{ t(product.naziv) }}</span>
+                <span>{{ t(product.velicina) }}</span>
                 <!--<span>{{product.opis}}</span>-->
                 <span>{{ product.cena }}RSD/{{ t("pcs") }}</span>
             </div>
@@ -385,7 +386,15 @@ export default {
             "egg-rolls": "Egg rolls",
             "green-tea": "Green tea",
             "juice": "Juice",
-            "wine": "Wine"          
+            "wine": "Wine",
+            "mala":"small portion",
+            "velika":"big portion"   ,
+            "chicken-peanut":"Chicken with peanut sauce",
+            "jun-hoisin":"Beef in hoishin sauce",
+            "svin-ter":"Pork in teriyaki sauce" ,
+            "poh-ban":"Fried banana",
+            "poh-cok": "Fried chocolate",
+            "poh-an": "Fried pineapple"   
       }, 
       "rs": {
           "button":"Поручи",
@@ -398,7 +407,15 @@ export default {
         "bigPrice": "Цена велике порције",
         "green-tea": "Зелени чај",
         "juice": "Сок",
-        "wine": "Вино"
-      }
+        "wine": "Вино",
+        "mala": "Мала порција",
+        "velika":"Велика порција",
+        "chicken-peanut":"Пилетина у кикирики сосу",
+        "jun-hoisin":"Јунетина у хоисин сосу",
+        "svin-ter":"Свињетина у терјаки сосу",
+        "poh-ban": "Похована банана",
+            "poh-cok":"Похована чоколада",
+            "poh-an": "Поховани ананас"
+        }
   }
 </i18n>

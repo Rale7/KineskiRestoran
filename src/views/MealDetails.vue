@@ -26,11 +26,11 @@
                     </div>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked/>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" v-model="velicina" checked/>
                     <label class="form-check-label" for="inlineRadio1">Mala</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"  v-model="velicina"/>
                     <label class="form-check-label" for="inlineRadio2">Velika</label>
                 </div><br>
                 <StarRating :valueR="4.25" :mealR="this.getMeal()"></StarRating>
@@ -203,6 +203,7 @@ export default {
             meal: this.getMeal(),
             amount: 1,
             logged: false,
+            velicina:"option1"
         };
     },
     components: {
@@ -235,17 +236,34 @@ export default {
             }*/
 
             let meal = this.getMeal();
+            
 
             if (localStorage.getItem("products") == null) {
                 let prod;
-                let ukcena = meal["small-portion-price"] * this.amount;
+                let ukcena;
+                let Cena;
+                let vel="mala"
+
+
+                if(this.velicina == "option1"){
+                    ukcena = meal["small-portion-price"] * this.amount;
+                    Cena = meal["small-portion-price"]
+                    vel="mala"
+                }else{
+                    ukcena = meal["big-portion-price"] * this.amount;
+                    Cena = meal["big-portion-price"]
+                    vel="velika"
+                }
+
+                
                 prod = {
                     naziv: meal["name"],
                     kolicina: this.amount,
-                    cena: meal["small-portion-price"],
+                    cena: Cena,
                     img: meal["img"],
                     ukcena: ukcena,
                     opis: "gg",
+                    velicina:vel,
                 };
 
                 let prods = [];
@@ -255,12 +273,25 @@ export default {
                 localStorage.setItem("products", JSON.stringify(prods));
             } else {
                 let prods = JSON.parse(localStorage.getItem("products"));
-                let ukcena = meal["small-portion-price"] * this.amount;
+                let ukcena;
+                let Cena;
                 let prod;
                 let found = false;
+                let vel="mala"
+
+                if(this.velicina == "option1"){
+                    ukcena = meal["small-portion-price"] * this.amount;
+                    Cena = meal["small-portion-price"]
+                    vel="mala"
+                }else{
+                    ukcena = meal["big-portion-price"] * this.amount;
+                    Cena = meal["big-portion-price"]
+                    vel="velika"
+                }
+
 
                 for (let i = 0; i < prods.length; i++) {
-                    if (prods[i].naziv == meal["name"]) {
+                    if (prods[i].naziv == meal["name"] && prods[i].velicina == vel) {
                         found = true;
                         prods[i].kolicina = prods[i].kolicina + this.amount;
                         prods[i].ukcena = prods[i].kolicina * prods[i].cena;
@@ -271,10 +302,11 @@ export default {
                     prod = {
                         naziv: meal["name"],
                         kolicina: this.amount,
-                        cena: meal["small-portion-price"],
+                        cena: Cena,
                         img: meal["img"],
                         ukcena: ukcena,
                         opis: "gg",
+                        velicina:vel
                     };
                     prods.push(prod);
                 }
@@ -303,7 +335,13 @@ export default {
             "smallPrice": "Small portion price",
             "green-tea": "Green tea",
             "juice": "Juice",
-            "wine": "Wine"
+            "wine": "Wine",
+            "chicken-peanut":"Chicken with peanut sauce",
+            "jun-hoisin":"Beef in hoishin sauce",
+            "svin-ter":"Pork in teriyaki sauce",
+            "poh-ban":"Fried banana",
+            "poh-cok": "Fried chocolate",
+            "poh-an": "Fried pineapple"   
         },
         "rs": {
             "cart": "Додај у корпу",
@@ -314,7 +352,13 @@ export default {
             "smallPrice": "Цена мале порције",
             "green-tea": "Зелени чај",
             "juice": "Сок",
-            "wine": "Вино"
+            "wine": "Вино",
+            "chicken-peanut":"Пилетина у кикирики сосу",
+            "jun-hoisin":"Јунетина у хоисин сосу",
+            "svin-ter":"Свињетина у терјаки сосу",
+            "poh-ban": "Похована банана",
+            "poh-cok":"Похована чоколада",
+            "poh-an": "Поховани ананас"
         }
     }
 </i18n>

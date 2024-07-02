@@ -124,7 +124,13 @@ export default {
             "egg-rolls": "Egg rolls",
             "green-tea": "Green tea",
             "juice": "Juice",
-            "wine": "Wine"
+            "wine": "Wine",
+            "chicken-peanut":"Chicken with peanut sauce",
+            "jun-hoisin":"Beef in hoishin sauce",
+            "svin-ter":"Pork in teriyaki sauce",
+            "poh-ban":"Fried banana",
+            "poh-cok": "Fried chocolate",
+            "poh-an": "Fried pineapple"
         },
         "rs": {
             "smallPortion": "Мала порција",
@@ -135,7 +141,13 @@ export default {
             "egg-rolls": "Ролнице са јајима",
             "green-tea": "Зелени чај",
             "juice": "Сок",
-            "wine": "Вино"
+            "wine": "Вино",
+            "chicken-peanut":"Пилетина у кикирики сосу",
+            "jun-hoisin":"Јунетина у хоисин сосу",
+            "svin-ter":"Свињетина у терјаки сосу",
+            "poh-ban": "Похована банана",
+            "poh-cok":"Похована чоколада",
+            "poh-an": "Поховани ананас"
         }
     }
 </i18n>

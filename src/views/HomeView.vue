@@ -104,7 +104,49 @@ export default {
         getMeals() {
             let allMeals = JSON.parse(localStorage.getItem("menu"));
 
-            let meals = allMeals.find((type) => type["name"] == "appetizers")["meals"];
+            let meals = []
+
+            let max1=0,max2=0,max3=0;
+            let meal1,meal2,meal3;
+
+            for(let i=0;i<4;i++){
+                //alert("i="+i)
+                for(let j=0;j<allMeals[i]["meals"].length;j++){
+                    //alert("j=" + j)
+                    let suma=0;
+                    for(let k=0;k<allMeals[i]["meals"][j]["rates"].length;k++){
+                        //alert("k=" + k)
+                        suma += allMeals[i]["meals"][j]["rates"][k]
+                    }
+                    let avg = suma*1.0/(allMeals[i]["meals"][j]["rates"].length)
+                    if(avg>=max1){
+                        max3=max2
+                        max2=max1
+                        max1=avg
+
+                        meal3=meal2
+                        meal2=meal1
+                        meal1=allMeals[i]["meals"][j]
+                    }else if(avg>=max2){
+                        max3=max2
+                        max2=avg
+
+                        meal3=meal2
+                        meal2=allMeals[i]["meals"][j]
+                    }else if(avg>=max3){
+                        max3=avg
+                        meal3=allMeals[i]["meals"][j]
+
+                    }
+                }
+            }
+            
+
+
+            meals.push(meal1)
+            meals.push(meal2)
+            meals.push(meal3)
+
 
             return meals;
         },
