@@ -14,7 +14,7 @@
 
     .login-page {
         width: 100%;
-        height: 870px;
+        height: 100vh;
         display: flex;
         justify-content: center;
         background-image: url("../assets/login-picture.jpg");

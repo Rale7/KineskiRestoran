@@ -28,7 +28,7 @@ button:hover {
 <script>
 import { useI18n } from "vue-i18n";
 import jsPDF from "jspdf";
-import "@/assets/fonts/Roboto-Regular-normal"
+import "@/assets/fonts/Roboto-Regular-normal";
 
 export default {
     setup() {
@@ -43,36 +43,47 @@ export default {
             const doc = new jsPDF();
             let menu = JSON.parse(localStorage.getItem("menu"));
 
-            // Add custom font
             doc.setFont("Roboto-Regular");
-            // Add title
             doc.setFontSize(18);
-            doc.text(this.t('menu'), 10, 10);
+            doc.text(this.t("menu"), 10, 10);
 
-            let yPosition = 20;
+            const pageHeight = doc.internal.pageSize.height;
+            const margin = 20;
+            const lineHeight = 10;
+            const maxLinesPerPage = Math.floor((pageHeight - margin * 2) / lineHeight);
+            let currentLine = 0;
+
+            const addNewPage = () => {
+                doc.addPage();
+                currentLine = 0;
+            };
 
             menu.forEach((category) => {
                 doc.setFontSize(16);
-                doc.text(this.t(category.name), 10, yPosition);
-                yPosition += 10;
+                doc.text(this.t(category.name), margin, margin + currentLine * lineHeight);
+                currentLine++;
 
                 category.meals.forEach((meal) => {
-                    doc.setFontSize(14);
-                    doc.text(`${this.t('name')}: ${this.t(meal.name)}`, 10, yPosition);
-                    yPosition += 10;
+                    if (currentLine > maxLinesPerPage) {
+                        addNewPage();
+                    }
 
                     doc.setFontSize(12);
-                    doc.text(`${this.t("bigPortion")}: ${meal["big-portion-price"]}`, 10, yPosition);
-                    yPosition += 10;
-
-                    doc.text(`${this.t("smallPortion")}: ${meal["small-portion-price"]}`, 10, yPosition);
-                    yPosition += 10;
+                    doc.text(
+                        `- ${this.t(meal.name)}: ${this.t("bigPortion")} ${this.t(meal["big-portion-price"])} | ${this.t("smallPortion")} ${this.t(meal["small-portion-price"])}`,
+                        margin,
+                        margin + currentLine * lineHeight
+                    );
+                    currentLine++;
                 });
 
-                yPosition += 10;
+                currentLine++;
+                if (currentLine > maxLinesPerPage) {
+                    addNewPage();
+                }
             });
 
-            doc.save(this.t('menu') + ".pdf");
+            doc.save(this.t("menu") + ".pdf");
         },
     },
 };
@@ -93,6 +104,15 @@ export default {
             "spring-rolls": "Spring rolls",
             "bao-buns": "Bao buns",
             "egg-rolls": "Egg rolls",
+            "green-tea": "Green tea",
+            "juice": "Juice",
+            "wine": "Wine",
+            "chicken-peanut":"Chicken with peanut sauce",
+            "jun-hoisin":"Beef in hoishin sauce",
+            "svin-ter":"Pork in teriyaki sauce",
+            "poh-ban":"Fried banana",
+            "poh-cok": "Fried chocolate",
+            "poh-an": "Fried pineapple"
         },
         "rs": {
             "name": "Назив",
@@ -107,6 +127,15 @@ export default {
             "spring-rolls": "Пролећне ролнице",
             "bao-buns": "Бао бунс",
             "egg-rolls": "Ролнице са јајима",
+            "green-tea": "Зелени чај",
+            "juice": "Сок",
+            "wine": "Вино",
+            "chicken-peanut":"Пилетина у кикирики сосу",
+            "jun-hoisin":"Јунетина у хоисин сосу",
+            "svin-ter":"Свињетина у терјаки сосу",
+            "poh-ban": "Похована банана",
+            "poh-cok":"Похована чоколада",
+            "poh-an": "Поховани ананас"
         }
     }
 </i18n>
