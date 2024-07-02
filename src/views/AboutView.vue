@@ -17,7 +17,7 @@
             <div class="col-md-12 col-lg-6">
                 <div>
                     <h1 class="about-h">{{ t("title2") }}</h1>
-                    <div class="about" style="font-size: 27px; text-align: center">
+                    <div class="about" style="font-size: 22px; text-align: center">
                         {{ t("about") }}
                     </div>
                 </div>
