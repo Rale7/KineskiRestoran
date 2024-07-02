@@ -236,6 +236,7 @@ export default {
             }*/
 
             let meal = this.getMeal();
+            let korisnik = JSON.parse(localStorage.getItem("logged-user"))["username"]
             
 
             if (localStorage.getItem("products") == null) {
@@ -257,6 +258,7 @@ export default {
 
                 
                 prod = {
+                    user:korisnik,
                     naziv: meal["name"],
                     kolicina: this.amount,
                     cena: Cena,
@@ -300,6 +302,7 @@ export default {
 
                 if (found == false) {
                     prod = {
+                        user:korisnik,
                         naziv: meal["name"],
                         kolicina: this.amount,
                         cena: Cena,

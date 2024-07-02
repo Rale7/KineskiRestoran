@@ -312,7 +312,14 @@ export default {
                 }*/
             localStorage.setItem("products", JSON.stringify(this.products));
         } else {
-            this.products = JSON.parse(localStorage.getItem("products"));
+            let all = JSON.parse(localStorage.getItem("products"))
+            //this.products = JSON.parse(localStorage.getItem("products"));
+            for(let i=0;i<all.length;i++){
+                if(all[i].user == JSON.parse(localStorage.getItem("logged-user"))["username"]){
+                    this.products.push(all[i])
+                }
+            }
+
             for (let i = 0; i < this.products.length; i++) {
                 this.total = this.total + this.products[i].ukcena;
             }
