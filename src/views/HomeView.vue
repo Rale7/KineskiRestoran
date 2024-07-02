@@ -48,7 +48,7 @@
                 :mealName="meal.name"
                 :imgSrc="meal.img"
                 :smallPrice="meal['small-portion-price']"
-                :bigPrice="meal['small-portion-price']"
+                :bigPrice="meal['big-portion-price']"
                 :foodId="meal['id']"
                 :avgRate="getAvgRate(meal)"></MealCard>
         </div>
@@ -118,7 +118,12 @@ export default {
                         //alert("k=" + k)
                         suma += allMeals[i]["meals"][j]["rates"][k]
                     }
-                    let avg = suma*1.0/(allMeals[i]["meals"][j]["rates"].length)
+                    let avg;
+                    if (allMeals[i]['meals'][j]['rates'].length == 0) {
+                        avg = 0;
+                    } else {
+                        avg = suma*1.0/(allMeals[i]["meals"][j]["rates"].length)
+                    }
                     if(avg>=max1){
                         max3=max2
                         max2=max1
