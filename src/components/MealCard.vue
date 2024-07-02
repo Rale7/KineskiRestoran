@@ -15,7 +15,9 @@
                     <div class="left">{{ t("bigPortion") }}</div>
                     <div class="right">{{ bigPrice }} RSD</div>
                 </div>
-                <a class="btn my-btn" @click="goToDetails(foodId)">{{ t("details") }}</a>
+                <div v-if="this.$route.path != '/'">
+                    <a class="btn my-btn" @click="goToDetails(foodId)">{{ t("details") }}</a>
+                </div>
             </div>
         </div>
     </div>
