@@ -12,6 +12,7 @@
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+                <h1 style="margin-top: 40px"><i class='bx bxs-phone'></i> 061 1234 567 </h1>
             </div>
 
             <div class="col-md-12 col-lg-6">

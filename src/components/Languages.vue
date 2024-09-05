@@ -1,7 +1,7 @@
 <template>
     <div class="my-dropdown">
-        <button class="my-dropbtn">{{ t("language") }} 
-        <i class="fa fa-caret-down"></i>
+        <button class="my-dropbtn">{{ t("language") }}&nbsp;
+        <i class='bx bxs-down-arrow' ></i>
         </button>
         <div class="my-dropdown-content">
         <a @click="changeLanguage('rs')">
